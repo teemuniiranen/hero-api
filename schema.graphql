@@ -1,0 +1,38 @@
+enum REGION {
+  EMEA
+  NA
+  LATAM
+  APAC
+}
+
+type Hero {
+  heroId: ID
+  region: REGION
+  name: String
+  alias: String
+}
+
+type HeroIterator {
+  heroes: [Hero]
+  nextToken: String
+}
+
+input HeroInput {
+  name: String!
+  region: REGION!
+  alias: String!
+}
+
+type Mutation {
+  addHero(name: String!, region: REGION!, alias: String!): Hero!
+}
+
+type Query {
+  getHero(heroId: ID!): Hero
+  listHeroes(region: REGION, limit: Int, nextToken: String): HeroIterator!
+}
+
+schema {
+  query: Query
+  mutation: Mutation
+}

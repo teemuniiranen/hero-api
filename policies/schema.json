@@ -1,0 +1,71 @@
+{
+    "HeroApp": {
+        "entityTypes": {
+            "User": {
+                "memberOfTypes": [
+                    "Group"
+                ],
+                "shape": {
+                    "type": "Record",
+                    "attributes": {}
+                }
+            },
+            "Group": {
+                "shape": {
+                    "type": "Record",
+                    "attributes": {}
+                }
+            },
+            "Hero": {
+                "shape": {
+                    "type": "Record",
+                    "attributes": {}
+                }
+            },
+            "Region": {
+                "shape": {
+                    "type": "Record",
+                    "attributes": {}
+                }
+            }
+        },
+        "actions": {
+            "AddHero": {
+                "appliesTo": {
+                    "principalTypes": [
+                        "User",
+                        "Group"
+                    ],
+                    "resourceTypes": ["Hero"]
+                }
+            },
+            "GetHero": {
+                "appliesTo": {
+                    "principalTypes": [
+                        "User",
+                        "Group"
+                    ],
+                    "resourceTypes": ["Hero"]
+                }
+            },
+            "ListHeroes": {
+                "appliesTo": {
+                    "principalTypes": [
+                        "User",
+                        "Group"
+                    ],
+                    "resourceTypes": ["Hero"]
+                }
+            },
+            "GetHeroName": {
+                "appliesTo": {
+                    "principalTypes": [
+                        "User",
+                        "Group"
+                    ],
+                    "resourceTypes": ["Hero"]
+                }
+            }
+        }
+    }
+}
